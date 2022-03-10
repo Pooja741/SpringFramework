@@ -19,7 +19,7 @@
     <!--        <property name="rootLoggerLevel" value="FINE"/>-->
     <!--        <property name="printedLoggerLevel" value="FINE"/>-->
     <!--    </bean>-->
-
+    <context:property-placeholder location="sports.properties"/>
     <bean id="fortuneService"
           class="com.practice.springdemo.dependencyInjection.HappyFortuneService">
     </bean>
@@ -32,6 +32,8 @@
     <bean id="cricketCoach"
           class="com.practice.springdemo.dependencyInjection.CricketCoach">
         <property name="fortuneService" ref="fortuneService"/>
+        <property name="email" value="${cricketCoachEmail}"/>
+        <property name="team" value="${cricketCoachTeam}"/>
     </bean>
 
 </beans>
