@@ -21,7 +21,7 @@
     <!--    </bean>-->
     <context:property-placeholder location="sports.properties"/>
     <bean id="fortuneService"
-          class="com.practice.springdemo.dependencyInjection.HappyFortuneService">
+          class="com.practice.springdemo.practice.randomFortune">
     </bean>
 
     <bean id="myCoach"

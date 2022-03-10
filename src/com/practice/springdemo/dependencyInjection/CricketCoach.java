@@ -6,6 +6,7 @@ public class CricketCoach implements Coach {
 
     private FortuneService fortuneService;
     private String team;
+    private String email;
 
     public String getTeam() {
         return team;
@@ -23,7 +24,6 @@ public class CricketCoach implements Coach {
         this.email = email;
     }
 
-    private String email;
     public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
