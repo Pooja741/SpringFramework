@@ -13,14 +13,20 @@
         - For more detailed logs, set values to "FINEST"
         - For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html
      -->
+
+    <!--    init-method is initialising the logs, if we remove it, logs won't be printed on console-->
     <bean id="myLoggerConfig" class="com.practice.springdemo.MyLoggerConfig" init-method="initLogger">
         <property name="rootLoggerLevel" value="FINE"/>
         <property name="printedLoggerLevel" value="FINE"/>
     </bean>
 
+    <bean id = "fortuneService"
+          class = "com.practice.springdemo.dependencyInjection.HappyFortuneService">
+    </bean>
 
     <bean id="myCoach"
-          class="com.practice.springdemo.TrackCoach">
+          class="com.practice.springdemo.inversionOfControl.TrackCoach">
+          <constructor-arg ref="fortuneService"></constructor-arg>
     </bean>
 
 </beans>
